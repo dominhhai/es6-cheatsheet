@@ -89,7 +89,7 @@ console.log(food); // Reference Error
 ```javascript
 {
     let food = 'Meow Mix';
-}
+};
 
 console.log(food); // Reference Error
 ```
@@ -236,7 +236,7 @@ var text = "This string contains \"double quotes\" which are escaped.";
 ```
 
 ```javascript
-let text = `This string contains "double quotes" which are escaped.`;
+let text = `This string contains "double quotes" which don't need to be escaped anymore.`;
 ```
 
 **字符串模板字面量** 还支持直接插入变量，可以实现字符串与变量的直接连接输出。
@@ -937,11 +937,10 @@ function* sillyGenerator() {
 }
 
 var generator = sillyGenerator();
-var value = generator.next();
-> console.log(value); // { value: 1, done: false }
-> console.log(value); // { value: 2, done: false }
-> console.log(value); // { value: 3, done: false }
-> console.log(value); // { value: 4, done: false }
+> console.log(generator.next()); // { value: 1, done: false }
+> console.log(generator.next()); // { value: 2, done: false }
+> console.log(generator.next()); // { value: 3, done: false }
+> console.log(generator.next()); // { value: 4, done: false }
 ```
 
 就像上面的例子，当[next](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator/next)运行时，它会把我们的generator向前“推动”，同时执行新的表达式。
